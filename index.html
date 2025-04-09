@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bank Login - Pro Edition</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    /* Same CSS as before */
+    :root {
+      --primary-color: #0056a6;
+      --accent-color: #1c86ee;
+      --bg-color: #f5f9ff;
+      --text-color: #333;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      padding: 40px 30px;
+      width: 100%;
+      max-width: 420px;
+      transition: all 0.3s ease;
+      animation: fadeIn 0.6s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .logo { text-align: center; margin-bottom: 24px; }
+    .logo img { width: 180px; }
+    h2 { text-align: center; font-size: 1.5rem; color: var(--primary-color); margin-bottom: 30px; }
+    label { display: block; font-weight: 600; margin-bottom: 8px; color: var(--text-color); }
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #d0d7e2;
+      border-radius: 8px;
+      background: #f9fbfd;
+      font-size: 14px;
+      transition: border-color 0.2s;
+    }
+    input:focus {
+      border-color: var(--accent-color);
+      outline: none;
+      background: #fff;
+    }
+    .captcha-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .captcha-container img {
+      height: 44px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    .btn-group {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    button {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .btn-login {
+      background: var(--primary-color);
+      color: white;
+    }
+    .btn-login:hover {
+      background: #003f80;
+    }
+    .btn-clear {
+      background: #eef2f8;
+      color: #333;
+    }
+    .btn-clear:hover {
+      background: #d8e3ef;
+    }
+    .links {
+      text-align: center;
+      font-size: 14px;
+    }
+    .links a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: var(--accent-color);
+      font-weight: 500;
+    }
+    .links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Bank_of_Maharashtra_logo.svg/2560px-Bank_of_Maharashtra_logo.svg.png" alt="Bank Logo" />
+    </div>
+    <h2>Secure Login</h2>
+    <h2>Welcome , Mr HASNAIN ALAM</h2>
+    <form id="loginForm">
+      <label for="userID">User ID / Customer ID</label>
+      <input type="text" id="userID" name="userID" placeholder="Enter your User ID" />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password" />
+
+      <label for="captcha">Enter CAPTCHA</label>
+      <div class="captcha-container">
+        <input type="text" id="captcha" name="captcha" placeholder="ABCD" />
+        <img src="https://dummyimage.com/100x44/cccccc/000000&text=ABCD" alt="CAPTCHA" />
+      </div>
+
+      <div class="btn-group">
+        <button type="submit" class="btn-login">Login</button>
+        <button type="reset" class="btn-clear">Clear</button>
+      </div>
+    </form>
+
+    <div class="links">
+      <a href="#">New User?</a>
+      <a href="#">Forgot Password?</a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault(); // Stop actual form submission
+
+      // Get form inputs
+      const userID = document.getElementById("userID").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      // Dummy check: All fields filled
+      if (userID && password && captcha) {
+        // Redirect to another URL (replace below with your desired destination)
+        window.location.href = "https://example.com/dashboard";
+      } else {
+        alert("Please fill in all fields.");
+      }
+    });
+  </script>
+
+</body>
+</html>
